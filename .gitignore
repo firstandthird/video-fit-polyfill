@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+dist
+*.dist*
+.idea/
+.DS_Store
+package-lock.json
+index.html
