@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { styles } from 'domassist';
 
 export default function objectFitlPolyfill(videos) {

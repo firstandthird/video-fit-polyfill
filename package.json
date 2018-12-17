@@ -29,8 +29,7 @@
     "tape-run": "^4.0.0"
   },
   "dependencies": {
-    "domassist": "^1.11.1",
-    "domodule": "^5.2.0"
+    "domassist": "^1.11.1"
   },
   "eslintConfig": {
     "env": {
@@ -47,7 +46,8 @@
   },
   "scriptkit": {
     "files": {
-      "dist/object-fit-polyfill.js": "index.js"
+      "dist/object-fit-polyfill.js": "index.js",
+      "test/object-fit-polyfill.test.dist.js": "test/object-fit-polyfill.test.js"
     },
     "scripts": {
       "babel": {
