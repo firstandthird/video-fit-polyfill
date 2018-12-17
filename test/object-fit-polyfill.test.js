@@ -34,8 +34,8 @@ test('Change attributes if polyfill', assert => {
   const videos = find('.fit-video');
   videos.forEach(element => {
     assert.equal(element.style.display, 'block');
-    assert.equal(element.style.padding, 0);
-    assert.equal(element.style.opacity, 1);
+    assert.equal(element.style.padding, '0px');
+    assert.equal(element.style.opacity, '1');
   });
 
   assert.end();
