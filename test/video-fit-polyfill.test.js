@@ -18,14 +18,6 @@ const init = () => {
 
 init();
 function polyfill() {
-  const videos = find('.fit-video');
-  const isEdge = (window.navigator.userAgent.indexOf('Edge/') !== -1);
-  const img = new Image();
-  const supportsObjectFit = 'object-fit' in img.style;
-  if ((supportsObjectFit && !isEdge) || !videos.length) {
-    return;
-  }
-
   videoFitPolyfill('.fit-video');
 }
 

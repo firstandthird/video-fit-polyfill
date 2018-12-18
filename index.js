@@ -1,11 +1,20 @@
 import { find, styles } from 'domassist';
 
-export default function videotFitPolyfill(className) {
-  const videos = find(className);
+export default function videoFitPolyfill(selector) {
+  // const isEdge = (window.navigator.userAgent.indexOf('Edge/') !== -1);
+  // const img = new Image();
+  // const supportsObjectFit = 'object-fit' in img.style;
+  // if ((supportsObjectFit && !isEdge)) {
+  //   return;
+  // }
+
+  const videos = find(selector);
   const videoArray = [];
-  const wrapper = document.createElement('object-fit');
+  const wrappers = [];
 
   videos.forEach(video => {
+    const wrapper = document.createElement('object-fit');
+    wrappers.push(wrapper);
     video.getCss = window.getComputedStyle(video);
     video.setCss = video.style;
     videoArray.push(video);
@@ -23,6 +32,8 @@ export default function videotFitPolyfill(className) {
   };
 
   function doWork(video) {
+    const wrapper = video.path[1];
+
     // the actual size and ratio of the video
     // we do this here, even though it doesn't change, because
     // at this point we can be sure the metadata has loaded
@@ -53,14 +64,14 @@ export default function videotFitPolyfill(className) {
     }
   }
 
-  videoArray.forEach(video => {
+  videoArray.forEach((video, index) => {
     video.setCss.border = video.setCss.margin = video.setCss.padding = 0;
     video.setCss.display = 'block';
     video.setCss.opacity = 1;
 
     'backgroundColor backgroundImage borderColor borderStyle borderWidth bottom fontSize lineHeight left opacity margin position right top visibility'.replace(/\w+/g, key => { wrapCss[key] = video.getCss[key]; });
 
-    styles(wrapper, wrapCss);
+    styles(wrappers[index], wrapCss);
 
     video.addEventListener('loadedmetadata', doWork);
     window.addEventListener('optimizedResize', doWork);
