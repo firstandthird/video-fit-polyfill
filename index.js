@@ -32,7 +32,7 @@ export default function videoFitPolyfill(selector) {
   };
 
   function doWork(video) {
-    const wrapper = video.path[1];
+    const wrapper = event.currentTarget.parentElement;
     // the actual size and ratio of the video
     // we do this here, even though it doesn't change, because
     // at this point we can be sure the metadata has loaded

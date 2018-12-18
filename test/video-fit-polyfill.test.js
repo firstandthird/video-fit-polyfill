@@ -1,5 +1,5 @@
 import test from 'tape-rollup';
-import { find } from 'domassist';
+import { ready, find } from 'domassist';
 import videoFitPolyfill from '../index';
 
 const init = () => {
@@ -17,12 +17,28 @@ const init = () => {
 };
 
 init();
-function polyfill() {
-  videoFitPolyfill('.fit-video');
-}
 
-test('Change attributes if polyfill', assert => {
-  polyfill();
+ready(() => videoFitPolyfill('.fit-video'));
+
+test('Object-fit is create', assert => {
+  const objectFit = find('object-fit');
+  objectFit.forEach(element => {
+    assert.ok(element.nodeName.toLocaleLowerCase() === 'object-fit');
+  });
+  assert.end();
+});
+
+test('Object-fit has style', assert => {
+  const objectFit = find('object-fit');
+  objectFit.forEach(element => {
+    assert.equal(element.style.display, 'inline-block');
+    assert.equal(element.style.backgroundColor, 'rgba(0, 0, 0, 0)');
+    assert.equal(element.style.position, 'static');
+  });
+  assert.end();
+});
+
+test('Change fit-videos attributes if polyfill', assert => {
   const videos = find('.fit-video');
   videos.forEach(element => {
     assert.equal(element.style.display, 'block');
