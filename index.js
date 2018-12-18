@@ -1,14 +1,14 @@
-import { styles } from 'domassist';
+import { find, styles } from 'domassist';
 
-export default function objectFitlPolyfill(videos) {
-  const v = [];
+export default function videotFitPolyfill(className) {
+  const videos = find(className);
+  const videoArray = [];
   const wrapper = document.createElement('object-fit');
 
   videos.forEach(video => {
-    const vi = video;
-    vi.getCss = window.getComputedStyle(video);
-    vi.setCss = video.style;
-    v.push(vi);
+    video.getCss = window.getComputedStyle(video);
+    video.setCss = video.style;
+    videoArray.push(video);
     // create and insert a wrapper element
     wrapper.appendChild(video.parentNode.replaceChild(wrapper, video));
   });
@@ -53,14 +53,12 @@ export default function objectFitlPolyfill(videos) {
     }
   }
 
-  v.forEach(video => {
+  videoArray.forEach(video => {
     video.setCss.border = video.setCss.margin = video.setCss.padding = 0;
     video.setCss.display = 'block';
     video.setCss.opacity = 1;
 
-    'backgroundColor backgroundImage borderColor borderStyle borderWidth bottom fontSize lineHeight left opacity margin position right top visibility'.replace(/\w+/g, key => {
-      wrapCss[key] = video.getCss[key];
-    });
+    'backgroundColor backgroundImage borderColor borderStyle borderWidth bottom fontSize lineHeight left opacity margin position right top visibility'.replace(/\w+/g, key => { wrapCss[key] = video.getCss[key]; });
 
     styles(wrapper, wrapCss);
 

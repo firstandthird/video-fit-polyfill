@@ -1,6 +1,6 @@
 import test from 'tape-rollup';
 import { find } from 'domassist';
-import objectFitPolyfill from '../index';
+import videotFitPolyfill from '../index';
 
 const init = () => {
   const container = document.createElement('div');
@@ -26,7 +26,7 @@ function polyfill() {
     return;
   }
 
-  objectFitPolyfill(videos);
+  videotFitPolyfill('.fit-video');
 }
 
 test('Change attributes if polyfill', assert => {
