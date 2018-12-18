@@ -1,5 +1,5 @@
 import test from 'tape-rollup';
-import { ready, find } from 'domassist';
+import { find } from 'domassist';
 import videoFitPolyfill from '../index';
 
 const init = () => {
@@ -18,7 +18,7 @@ const init = () => {
 
 init();
 
-ready(() => videoFitPolyfill('.fit-video'));
+videoFitPolyfill('.fit-video');
 
 test('Object-fit is create', assert => {
   const objectFit = find('object-fit');
