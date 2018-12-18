@@ -1,12 +1,12 @@
 import { find, styles } from 'domassist';
 
 export default function videoFitPolyfill(selector) {
-  // const isEdge = (window.navigator.userAgent.indexOf('Edge/') !== -1);
-  // const img = new Image();
-  // const supportsObjectFit = 'object-fit' in img.style;
-  // if ((supportsObjectFit && !isEdge)) {
-  //   return;
-  // }
+  const isEdge = (window.navigator.userAgent.indexOf('Edge/') !== -1);
+  const img = new Image();
+  const supportsObjectFit = 'object-fit' in img.style;
+  if ((supportsObjectFit && !isEdge)) {
+    return;
+  }
 
   const videos = find(selector);
   const videoArray = [];
@@ -33,7 +33,6 @@ export default function videoFitPolyfill(selector) {
 
   function doWork(video) {
     const wrapper = video.path[1];
-
     // the actual size and ratio of the video
     // we do this here, even though it doesn't change, because
     // at this point we can be sure the metadata has loaded
