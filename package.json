@@ -47,7 +47,6 @@
   "scriptkit": {
     "files": {
       "dist/video-fit-polyfill.js": "index.js",
-      "dist/fu.js": "fu.js",
       "test/video-fit-polyfill.test.dist.js": "test/video-fit-polyfill.test.js"
     },
     "scripts": {
