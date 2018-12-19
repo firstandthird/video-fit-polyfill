@@ -6,6 +6,13 @@ Use
 `npm install video-fit-polyfill`
 
 ## Usage
-Just add the selector you need, and magic happens. If the browser supports object-fit it won't do anything.
+For magic:
+1. import it
+2. use ***fit-video** as class in all the videos you want.
+3. Magic
 
-`ready(() => videoFitPolyfill('.fit-video'))`
+If you prefer use your own selector, import the function and added as below.
+
+`videoFitPolyfill('.mi-custom-selector')`
+
+If the browser supports object-fit it won't do anything.
