@@ -1,0 +1,60 @@
+{
+  "name": "video-fit-polyfill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/video-fit-polyfill.js",
+  "module": "index.js",
+  "homepage": "https://github.com/firstandthird/video-fit-polyfill",
+  "author": "First+Third",
+  "license": "MIT License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/firstandthird/video-fit-polyfill"
+  },
+  "scripts": {
+    "start": "scriptkit",
+    "build": "scriptkit build",
+    "dev": "scriptkit dev",
+    "test": "cat test/video-fit-polyfill.test.dist.js | tape-run --static . --browser phantomjs --render tap-spec",
+    "prepublishOnly": "scriptkit"
+  },
+  "devDependencies": {
+    "eslint-config-firstandthird": "^4.3.0",
+    "eslint-plugin-compat": "^2.5.1",
+    "eslint-plugin-import": "^2.14.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "scriptkit": "^1.0.0",
+    "tap-spec": "^5.0.0",
+    "tape-rollup": "4.6.4",
+    "tape-run": "^4.0.0"
+  },
+  "dependencies": {
+    "domassist": "^1.11.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true
+    },
+    "extends": "firstandthird",
+    "plugins": [
+      "compat"
+    ],
+    "rules": {
+      "compat/compat": 2
+    }
+  },
+  "scriptkit": {
+    "files": {
+      "dist/video-fit-polyfill.js": "index.js",
+      "test/video-fit-polyfill.test.dist.js": "test/video-fit-polyfill.test.js"
+    },
+    "scripts": {
+      "babel": {
+        "exclude": [
+          "node_modules/tape-rollup/*"
+        ]
+      }
+    }
+  }
+}
