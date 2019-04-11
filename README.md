@@ -15,7 +15,7 @@ npm install video-fit-polyfill
 For magic:
 
 1. Import it
-2. Use ***fit-video** as class in all the videos you want.
+2. Use **fit-video** as class in all the videos you want.
 3. Magic
 
 If you prefer use your own selector, import the function and added as below.
