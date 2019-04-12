@@ -7,7 +7,7 @@ An object-fit polyfill for videos.
 ## Installation
 
 ```sh
-npm install video-fit-polyfill
+npm install @firstandthird/video-fit-polyfill
 ```
 
 ## Usage
