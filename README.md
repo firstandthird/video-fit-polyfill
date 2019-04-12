@@ -21,7 +21,7 @@ For magic:
 If you prefer to use your own selector, import the function and use it as it's shown below.
 
 ```js
-videoFitPolyfill('.mi-custom-selector')
+videoFitPolyfill('.my-custom-selector')
 ```
 
 If the browser supports object-fit it won't do anything.
