@@ -1,6 +1,6 @@
 {
   "name": "video-fit-polyfill",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "An object-fit polyfill for videos",
   "main": "index.js",
   "module": "dist/video-fit-polyfill.esm.js",
