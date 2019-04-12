@@ -18,7 +18,7 @@ For magic:
 2. Use **fit-video** as class in all the videos you want.
 3. Magic
 
-If you prefer use your own selector, import the function and added as below.
+If you prefer to use your own selector, import the function and use it as it's shown below.
 
 ```js
 videoFitPolyfill('.mi-custom-selector')
