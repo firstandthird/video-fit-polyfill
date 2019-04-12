@@ -53,10 +53,10 @@ export default function videoFitPolyfill(selector) {
       video.setCss.height = `${wrapHeight}px`;
       video.setCss.marginLeft = `${Math.round((wrapWidth - newHeight) / 2)}px`;
     } else {
-      //newWidth = wrapWidth / videoRatio;
+      newWidth = wrapWidth / videoRatio;
 
-      //video.setCss.width = `${wrapWidth}px`;
-     // video.setCss.height = `${Math.round(newWidth)}px`;
+      video.setCss.width = `${wrapWidth}px`;
+      video.setCss.height = `${Math.round(newWidth)}px`;
       video.setCss.marginTop = `${Math.round((wrapHeight - newWidth) / 2)}px`;
     }
   }

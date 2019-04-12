@@ -20,7 +20,7 @@ init();
 
 videoFitPolyfill('.fit-video');
 
-test('Object-fit is create', assert => {
+test('Object-fit is created', assert => {
   const objectFit = find('object-fit');
   objectFit.forEach(element => {
     assert.ok(element.nodeName.toLocaleLowerCase() === 'object-fit');

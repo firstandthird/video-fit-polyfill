@@ -1,18 +1,27 @@
 # Video-fit Polyfill
+
+![npm](https://img.shields.io/npm/v/video-fit-polyfill.svg)
+
 An object-fit polyfill for videos.
 
-## Instalation
-Use
-`npm install video-fit-polyfill`
+## Installation
+
+```sh
+npm install video-fit-polyfill
+```
 
 ## Usage
+
 For magic:
-1. import it
-2. use ***fit-video** as class in all the videos you want.
+
+1. Import it
+2. Use **fit-video** as class in all the videos you want.
 3. Magic
 
-If you prefer use your own selector, import the function and added as below.
+If you prefer to use your own selector, import the function and use it as it's shown below.
 
-`videoFitPolyfill('.mi-custom-selector')`
+```js
+videoFitPolyfill('.my-custom-selector')
+```
 
 If the browser supports object-fit it won't do anything.
