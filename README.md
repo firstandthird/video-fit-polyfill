@@ -1,6 +1,6 @@
 # Video-fit Polyfill
 
-![npm](https://img.shields.io/npm/v/video-fit-polyfill.svg)
+![npm](https://img.shields.io/npm/v/@firstandthird/video-fit-polyfill.svg)
 
 An object-fit polyfill for videos.
 
